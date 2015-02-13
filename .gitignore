@@ -1,0 +1,12 @@
+#idea files
+.idea/
+*.iml
+
+#gradle build dirs
+.gradle
+build
+generated
+out
+
+*.vpp~*
+gradle-app.setting

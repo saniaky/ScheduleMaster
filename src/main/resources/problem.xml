@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<solver>
+    <!--Domain model config-->
+    <environmentMode>FAST_ASSERT</environmentMode>
+    <solutionClass>application.domain.model.Schedule</solutionClass>
+    <entityClass>application.domain.model.Task</entityClass>
+
+    <scoreDirectorFactory>
+        <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+        <easyScoreCalculatorClass>application.solver.score.ScheduleEasyScoreCalculator</easyScoreCalculatorClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+    </scoreDirectorFactory>
+
+    <termination>
+        <secondsSpentLimit>6</secondsSpentLimit>
+    </termination>
+
+    <constructionHeuristic>
+        <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+    </constructionHeuristic>
+
+    <localSearch>
+        <acceptor>
+            <entityTabuSize>7</entityTabuSize>
+        </acceptor>
+        <forager>
+            <acceptedCountLimit>1000</acceptedCountLimit>
+        </forager>
+    </localSearch>
+
+</solver>
