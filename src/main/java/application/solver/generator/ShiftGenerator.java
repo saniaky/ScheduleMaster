@@ -15,9 +15,9 @@ public class ShiftGenerator {
 
     public static List<PersonalShift> generateShifts(int nursesCount) {
         List<PersonalShift> shifts = new ArrayList<PersonalShift>();
-        for(int i = 0 ; i < nursesCount; i++) {
+        for (int i = 0; i < nursesCount; i++) {
             Nurse nurse = NurseGenerator.generateNurse();
-            for(int j = 0; j < SHIFTS_PER_NURSE; j++) {
+            for (int j = 0; j < SHIFTS_PER_NURSE; j++) {
                 shifts.add(new PersonalShift((id++).longValue(), nurse));
             }
         }

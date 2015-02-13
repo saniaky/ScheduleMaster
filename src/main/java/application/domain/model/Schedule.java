@@ -17,7 +17,12 @@ import java.util.List;
 
 @PlanningSolution
 @XStreamAlias("Schedule")
-public class Schedule implements Solution<HardSoftScore>{
+public class Schedule implements Solution<HardSoftScore> {
+
+    @XStreamConverter(value = XStreamScoreConverter.class, types = {HardSoftScoreDefinition.class})
+    private HardSoftScore score;
+    private List<Task> tasks;
+    private List<PersonalShift> personalShifts;
 
     public Schedule() {
     }
@@ -26,13 +31,6 @@ public class Schedule implements Solution<HardSoftScore>{
         this.tasks = tasks;
         this.personalShifts = personalShifts;
     }
-
-    @XStreamConverter(value = XStreamScoreConverter.class, types = { HardSoftScoreDefinition.class})
-    private HardSoftScore score;
-
-    private List<Task> tasks;
-
-    private List<PersonalShift> personalShifts;
 
     @PlanningEntityCollectionProperty
     public List<Task> getTasks() {

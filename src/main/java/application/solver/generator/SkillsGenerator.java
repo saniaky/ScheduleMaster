@@ -16,7 +16,7 @@ public class SkillsGenerator {
         Set<Integer> alreadyUsedSkillNumber = new HashSet<Integer>();
         while (skills.size() < skillsCount) {
             Integer newSkillIndex = RandomUtil.randInt(0, Skill.values().length - 1);
-            if(!alreadyUsedSkillNumber.contains(newSkillIndex)) {
+            if (!alreadyUsedSkillNumber.contains(newSkillIndex)) {
                 skills.add(Skill.values()[newSkillIndex]);
                 alreadyUsedSkillNumber.add(newSkillIndex);
             }

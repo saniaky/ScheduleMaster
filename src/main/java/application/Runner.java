@@ -17,14 +17,14 @@ public class Runner {
         solver.solve(schedule);
         schedule = (Schedule) solver.getBestSolution();
         for (PersonalShift shift : schedule.getPersonalShifts()) {
-            System.out.print(shift);
-            System.out.print(shift.getNurse());
+            System.out.println(shift);
+            System.out.println(shift.getNurse() + ", will have tasks: ");
             for (Task task : schedule.getTasks()) {
                 if (task.getShift().equals(shift)) {
-                    System.out.print(" - " + task);
+                    System.out.println(" - " + task);
                 }
             }
-            System.out.println();
+            System.out.println("\n===================");
         }
     }
 

@@ -15,6 +15,9 @@ import java.util.List;
 @XStreamAlias("Task")
 public class Task extends AbstractPersistable {
 
+    private PersonalShift shift;
+    private List<Skill> requirements;
+
     public Task() {
     }
 
@@ -22,10 +25,6 @@ public class Task extends AbstractPersistable {
         super(id);
         this.requirements = requirements;
     }
-
-    private PersonalShift shift;
-
-    private List<Skill> requirements;
 
     @PlanningVariable(valueRangeProviderRefs = {"personalShiftRange"}, strengthComparatorClass =
             PersonalShiftStrengthComparator.class)
@@ -43,5 +42,13 @@ public class Task extends AbstractPersistable {
 
     public void setRequirements(List<Skill> requirements) {
         this.requirements = requirements;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id + ", " +
+                "requirements=" + requirements +
+                '}';
     }
 }

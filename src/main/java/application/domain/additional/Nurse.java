@@ -7,6 +7,8 @@ import java.util.List;
 
 public class Nurse extends AbstractPersistable {
 
+    private List<Skill> skills;
+
     public Nurse() {
     }
 
@@ -15,13 +17,19 @@ public class Nurse extends AbstractPersistable {
         this.skills = skills;
     }
 
-    private List<Skill> skills;
-
     public List<Skill> getSkills() {
         return skills;
     }
 
     public void setSkills(List<Skill> skills) {
         this.skills = skills;
+    }
+
+    @Override
+    public String toString() {
+        return "Nurse{" +
+                "id=" + id + ", " +
+                "skills=" + skills +
+                '}';
     }
 }
